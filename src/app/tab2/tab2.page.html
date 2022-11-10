@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-title>
     Registro
     </ion-title>
@@ -7,5 +7,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+
+
+
+    <ion-item color="dark">
+      <ion-label>Nome:</ion-label>
+      <ion-input placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>CPF:</ion-label>
+      <ion-input type="number" placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>Email:</ion-label>
+      <ion-input type="email" placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>Senha:</ion-label>
+      <ion-input type="password" value=""></ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>Confirmar:</ion-label>
+      <ion-input type="password" value=""></ion-input>
+    </ion-item>
+
+
+  <ion-button color="tertiary" expand="full" >Salvar</ion-button>
+  <ion-button color="tertiary" expand="full" >Voltar</ion-button>
+
 </ion-content>
