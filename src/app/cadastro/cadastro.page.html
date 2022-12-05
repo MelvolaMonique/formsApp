@@ -13,11 +13,16 @@
     <ion-item>
       <ion-label position="floating">Nome</ion-label>
       <ion-input formControlName="nome"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome"></ng-container>
+    <span class="msg-erro"
+      *ngIf="fromCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+      {{erro.mensagem}}
+    </span>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">CPF</ion-label>
-      <ion-input></ion-input>
+      <ion-input formControlName="cpf"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -27,12 +32,12 @@
 
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input formControlName="senha" type="password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Confirmar senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input formControlName="confirmasenha" type="password"></ion-input>
     </ion-item>
 
     <ion-button expand="block" (click)="salvarCadastro()">SALVAR</ion-button>
