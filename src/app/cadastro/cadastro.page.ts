@@ -10,6 +10,7 @@ import{FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class CadastroPage implements OnInit {
 
   formCadastro: FormGroup;
+
   mensagens = {
     nome: [
       { tipo: 'required', mensagem: 'O campo Nome é obrigatório.' },
@@ -17,7 +18,6 @@ export class CadastroPage implements OnInit {
     ],
     cpf: [
       { tipo: 'required', mensagem: 'O campo CPF é obrigatório.' },
-      { tipo: 'invalido', mensagem: 'CPF Inválido.' },
     ],
     email: [
       { tipo: 'required', mensagem: 'O campo E-mail é obrigatório.' },

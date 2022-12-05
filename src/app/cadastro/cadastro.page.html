@@ -13,16 +13,24 @@
     <ion-item>
       <ion-label position="floating">Nome</ion-label>
       <ion-input formControlName="nome"></ion-input>
-      <ng-container *ngFor="let erro of mensagens.nome"></ng-container>
-    <span class="msg-erro"
-      *ngIf="fromCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
-      {{erro.mensagem}}
-    </span>
+      <ng-container *ngFor="let erro of mensagens.nome">
+        <span class="msg-erro"
+          *ngIf="fromCadastro.get('nome')?.hasError(erro.tipo) && (formCadastro.get('nome')?.dirty || formCadastro.get('nome')?.touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">CPF</ion-label>
       <ion-input formControlName="cpf"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome">
+        <span class="msg-erro"
+          *ngIf="fromCadastro.get('nome')?.hasError(erro.tipo) && (formCadastro.get('nome')?.dirty || formCadastro.get('nome')?.touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+
     </ion-item>
 
     <ion-item>
