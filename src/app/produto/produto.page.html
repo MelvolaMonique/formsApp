@@ -1,34 +1,59 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start"> <ion-button></ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>produto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form >
+  <form [formGroup]="formProduto">
   <ion-item>
     <ion-label position="floating">Nome</ion-label>
-    <ion-input></ion-input>
+    <ion-input formControlName="nome"></ion-input>
+    <ng-container *ngFor="let erro of mensagens.nome " >
+      <span class="msg-erro"
+      *ngIf="formProduto.get('nome').hasError(erro.tipo) && (formProduto.get('nome').dirty || formProduto.get('nome').touched)">
+        {{erro.mensagem}}
+      </span>
+    </ng-container>
   </ion-item>
 
     <ion-item>
       <ion-label position="floating">Descrição</ion-label>
-      <ion-input></ion-input>
+      <ion-input formControlName="descricao"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.descricao " >
+        <span class="msg-erro"
+        *ngIf="formProduto.get('descricao').hasError(erro.tipo) && (formProduto.get('descricao').dirty || formProduto.get('descricao').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Validade</ion-label>
-      <ion-input></ion-input>
+      <ion-input formControlName="validade"></ion-input>
+        <ng-container *ngFor="let erro of mensagens.validade " >
+        <span class="msg-erro"
+        *ngIf="formProduto.get('validade').hasError(erro.tipo) && (formProduto.get('validade').dirty || formProduto.get('validade').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Preco</ion-label>
-      <ion-input></ion-input>
+      <ion-input formControlName="preco"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.preco " >
+        <span class="msg-erro"
+        *ngIf="formProduto.get('preco').hasError(erro.tipo) && (formProduto.get('preco').dirty || formProduto.get('preco').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
 
-    <ion-button expand="block">Salvar</ion-button>
+    <ion-button expand="block"(click)="salvarProduto()">Salvar</ion-button>
 
 
 
