@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -8,9 +8,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="dark">
   <form [formGroup]="formCadastro">
-    <ion-item>
+    <ion-card>
+    <ion-item color="dark">
       <ion-label position="floating">Nome</ion-label>
       <ion-input formControlName="nome"></ion-input>
       <ng-container *ngFor="let erro of mensagens.nome">
@@ -21,7 +22,7 @@
       </ng-container>
     </ion-item>
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-label position="floating">CPF</ion-label>
       <ion-input formControlName="cpf"></ion-input>
       <ng-container *ngFor="let erro of mensagens.nome">
@@ -33,7 +34,7 @@
 
     </ion-item>
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-label position="floating">E-mail</ion-label>
       <ion-input formControlName="email"></ion-input>
       <ng-container *ngFor="let erro of mensagens.nome">
@@ -44,7 +45,7 @@
       </ng-container>
     </ion-item>
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-label position="floating">Senha</ion-label>
       <ion-input formControlName="senha" type="password"></ion-input>
       <ng-container *ngFor="let erro of mensagens.nome">
@@ -55,7 +56,7 @@
       </ng-container>
     </ion-item>
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-label position="floating">Confirmar senha</ion-label>
       <ion-input formControlName="confirmasenha" type="password"></ion-input>
       <ng-container *ngFor="let erro of mensagens.nome">
@@ -67,7 +68,7 @@
     </ion-item>
 
     <ion-button expand="block" (click)="salvarCadastro()">SALVAR</ion-button>
-
+  </ion-card>
   </form>
 
 </ion-content>

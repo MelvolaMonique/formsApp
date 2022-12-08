@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar  color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -7,9 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="dark">
   <form [formGroup]="formProduto">
-  <ion-item>
+    <ion-card>
+  <ion-item color="dark">
     <ion-label position="floating">Nome</ion-label>
     <ion-input formControlName="nome"></ion-input>
     <ng-container *ngFor="let erro of mensagens.nome " >
@@ -20,7 +21,7 @@
     </ng-container>
   </ion-item>
 
-    <ion-item>
+  <ion-item color="dark">
       <ion-label position="floating">Descrição</ion-label>
       <ion-input formControlName="descricao"></ion-input>
       <ng-container *ngFor="let erro of mensagens.descricao " >
@@ -31,7 +32,7 @@
       </ng-container>
     </ion-item>
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-label position="floating">Validade</ion-label>
       <ion-input formControlName="validade"></ion-input>
         <ng-container *ngFor="let erro of mensagens.validade " >
@@ -42,8 +43,8 @@
       </ng-container>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Preco</ion-label>
+    <ion-item color="dark">
+      <ion-label position="floating">Preço</ion-label>
       <ion-input formControlName="preco"></ion-input>
       <ng-container *ngFor="let erro of mensagens.preco " >
         <span class="msg-erro"
@@ -54,7 +55,7 @@
     </ion-item>
 
     <ion-button expand="block"(click)="salvarProduto()">Salvar</ion-button>
-
+  </ion-card>
 
 
 </form>
